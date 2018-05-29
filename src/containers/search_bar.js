@@ -10,6 +10,7 @@ export class SearchBar extends Component {
         this.state = { term: ''};
 
         this.onInputChange = this.onInputChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onInputChange(event) {
@@ -18,6 +19,12 @@ export class SearchBar extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
+
+        // To fetch weather data
+        this.props.fetchWeather(this.state.term);
+
+        // Resets after success
+        this.setState({ term: '' });
     }
 
     render() {
