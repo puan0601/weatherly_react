@@ -6,3 +6,7 @@ td, th {
 .input-group {
     margin: 20px 0px;
 }
+
+svg {
+    height: 150px;
+}
